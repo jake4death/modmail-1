@@ -11,7 +11,8 @@ use std::num::ParseIntError;
 
 lazy_static! {
     static ref RE: Regex =
-        Regex::new(r"^\[[0-9-]{10} [0-9:]{8}\] [^\n]*#[0-9]{4} \((User|Staff|Comment)\):").unwrap();
+        Regex::new(r"^\[[0-9-]{10} [0-9:]{8}\] [^\n]*#[0-9]{1,4} \((User|Staff|Comment)\):")
+            .unwrap();
 }
 
 #[derive(Debug, Serialize)]
